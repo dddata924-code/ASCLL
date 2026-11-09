@@ -1,0 +1,49 @@
+{
+    "version": "1.0.5",
+    "description": "UsbEAm Download Manager —— 多线程下载管理器（羽翼城 Dogfight360）",
+    "homepage": "https://www.dogfight360.com/blog/19171/",
+    "license": "Freeware",
+    "architecture": {
+        "64bit": {
+            "url": "https://www.dogfight360.com/Usbeam/UDM/UsbEAm_Download_Manager_1.0.5_AMD64.zip",
+            "hash": "2e9e999e74384f3801355408e40a08a688ef43292e27e916e0d801c9a2797e67",
+            "extract_dir": "UsbEAm_Download_Manager_1.0.5_AMD64"
+        },
+        "arm64": {
+            "url": "https://www.dogfight360.com/Usbeam/UDM/UsbEAm_Download_Manager_1.0.5_ARM64.zip",
+            "hash": "8c3aec2f4c2254db017d98f2c0fbd5950a952186733a9ce91ad04157d95dd506",
+            "extract_dir": "UsbEAm_Download_Manager_1.0.5_ARM64"
+        }
+    },
+    "bin": [
+        [
+            "UsbEAm_Download_Manager.exe",
+            "usbeam-download-manager"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "UsbEAm_Download_Manager.exe",
+            "UsbEAm Download Manager"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.dogfight360.com/blog/19171/",
+        "regex": "UsbEAm_Download_Manager_([\\d.]+)_AMD64\\.zip"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://www.dogfight360.com/Usbeam/UDM/UsbEAm_Download_Manager_$version_AMD64.zip",
+                "extract_dir": "UsbEAm_Download_Manager_$version_AMD64"
+            },
+            "arm64": {
+                "url": "https://www.dogfight360.com/Usbeam/UDM/UsbEAm_Download_Manager_$version_ARM64.zip",
+                "extract_dir": "UsbEAm_Download_Manager_$version_ARM64"
+            }
+        },
+        "hash": {
+            "mode": "download"
+        }
+    }
+}

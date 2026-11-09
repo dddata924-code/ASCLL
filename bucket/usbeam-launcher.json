@@ -1,0 +1,31 @@
+{
+    "version": "1.0.12",
+    "description": "UsbEAm Launcher —— 多平台游戏启动器/加速配置工具（羽翼城 Dogfight360）",
+    "homepage": "https://www.dogfight360.com/blog/19265/",
+    "license": "Freeware",
+    "url": "https://www.dogfight360.com/Usbeam/UL/UsbEAm_Launcher_1.0.12.zip",
+    "hash": "0197d99ce180a3c122b918a0bfbc490eaac4980178d10e53fdf83114c9a4ee40",
+    "extract_dir": "UsbEAm_Launcher",
+    "bin": [
+        [
+            "UsbEAm_Launcher.exe",
+            "usbeam-launcher"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "UsbEAm_Launcher.exe",
+            "UsbEAm Launcher"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.dogfight360.com/blog/19265/",
+        "regex": "UsbEAm_Launcher_([\\d.]+)\\.zip"
+    },
+    "autoupdate": {
+        "url": "https://www.dogfight360.com/Usbeam/UL/UsbEAm_Launcher_$version.zip",
+        "hash": {
+            "mode": "download"
+        }
+    }
+}

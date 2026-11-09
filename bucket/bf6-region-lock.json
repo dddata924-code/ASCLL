@@ -1,0 +1,33 @@
+{
+    "version": "1.2",
+    "description": "战地6 匹配区域锁定工具 —— 锁定匹配区域降低延迟（羽翼城 Dogfight360）",
+    "homepage": "https://www.dogfight360.com/blog/18892/",
+    "license": "Freeware",
+    "notes": [
+        "需以管理员身份运行以修改防火墙规则；ip-ranges.json 为区域IP段数据，请勿删除"
+    ],
+    "url": "https://www.dogfight360.com/blog/wp-content/uploads/2025/12/战地6匹配区域锁定工具Ver1.2.zip",
+    "hash": "b7cd296691b04d3cd9065ae33d0be0bc66ef62ec9433da56df15073a4b23c69b",
+    "bin": [
+        [
+            "战地6匹配区域锁定工具Ver1.2.exe",
+            "bf6-region-lock"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "战地6匹配区域锁定工具Ver1.2.exe",
+            "战地6 匹配区域锁定"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.dogfight360.com/blog/18892/",
+        "regex": "战地6匹配区域锁定工具Ver([\\d.]+)\\.zip"
+    },
+    "autoupdate": {
+        "url": "https://www.dogfight360.com/blog/wp-content/uploads/2025/12/战地6匹配区域锁定工具Ver$version.zip",
+        "hash": {
+            "mode": "download"
+        }
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "version": "2.0.6",
+    "description": "Steam 挂卡助手 —— 自动挂机掉卡（羽翼城 Dogfight360）",
+    "homepage": "https://www.dogfight360.com/blog/19041/",
+    "license": "Freeware",
+    "notes": [
+        "需要登录 Steam 账号；挂卡期间建议关闭 Steam 客户端内其他活动"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://www.dogfight360.com/blog/wp-content/uploads/2026/07/Steam挂卡助手_Ver.2.0.6_win-x64.zip",
+            "hash": "fb9a213ab2f839dd407d469e669ec37e112a04572c12312f4ee76430868c4223",
+            "extract_dir": "Steam挂卡助手_Ver.2.0.6"
+        },
+        "arm64": {
+            "url": "https://www.dogfight360.com/blog/wp-content/uploads/2026/07/Steam挂卡助手_Ver.2.0.6_win-arm64.zip",
+            "hash": "b3fa5cf1510a97233cfbdcdb025939953eb8d98a9a3a7d25baf26953a5436f3a",
+            "extract_dir": "Steam挂卡助手_Ver.2.0.6"
+        }
+    },
+    "bin": [
+        [
+            "Steam_Card_Farmer.exe",
+            "steam-card-farmer"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "Steam_Card_Farmer.exe",
+            "Steam 挂卡助手"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.dogfight360.com/blog/19041/",
+        "regex": "Steam挂卡助手_Ver\\.([\\d.]+)_win-x64\\.zip"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://www.dogfight360.com/blog/wp-content/uploads/2026/07/Steam挂卡助手_Ver.$version_win-x64.zip",
+                "extract_dir": "Steam挂卡助手_Ver.$version"
+            },
+            "arm64": {
+                "url": "https://www.dogfight360.com/blog/wp-content/uploads/2026/07/Steam挂卡助手_Ver.$version_win-arm64.zip",
+                "extract_dir": "Steam挂卡助手_Ver.$version"
+            }
+        },
+        "hash": {
+            "mode": "download"
+        }
+    }
+}

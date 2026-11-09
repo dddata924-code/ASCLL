@@ -1,0 +1,55 @@
+{
+    "version": "15.0.9",
+    "description": "Steam 社区/商店/创意工坊 反代加速工具（羽翼城 Dogfight360）",
+    "homepage": "https://www.dogfight360.com/blog/18682/",
+    "license": "Freeware",
+    "notes": [
+        "首次运行需以管理员身份安装证书与服务：设置 → 系统 → 安装根证书",
+        "DNS 重定向模式会安装内核驱动，与部分反作弊（如 Vanguard）存在兼容性提示"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://www.dogfight360.com/Usbeam/V15/Steamcommunity_302_15.0.9_Windows_x64.zip",
+            "hash": "92bb04f747c7d31189bf88dcecd39879a85196215a811487d7a60a1d788c2464",
+            "extract_dir": "Steamcommunity_302"
+        },
+        "arm64": {
+            "url": "https://www.dogfight360.com/Usbeam/V15/Steamcommunity_302_15.0.9_Windows_arm64.zip",
+            "hash": "ec98dd2909ae8dd78699e8d421e38d98975bf1a52813e7daf732999c702e29b3",
+            "extract_dir": "Steamcommunity_302"
+        }
+    },
+    "bin": [
+        [
+            "Steamcommunity_302.exe",
+            "steamcommunity302"
+        ],
+        [
+            "steamcommunity_302.cli.exe",
+            "s302-cli"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "Steamcommunity_302.exe",
+            "Steamcommunity 302"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.dogfight360.com/blog/18682/",
+        "regex": "Steamcommunity_302_([\\d.]+)_Windows_x64\\.zip"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://www.dogfight360.com/Usbeam/V15/Steamcommunity_302_$version_Windows_x64.zip"
+            },
+            "arm64": {
+                "url": "https://www.dogfight360.com/Usbeam/V15/Steamcommunity_302_$version_Windows_arm64.zip"
+            }
+        },
+        "hash": {
+            "mode": "download"
+        }
+    }
+}

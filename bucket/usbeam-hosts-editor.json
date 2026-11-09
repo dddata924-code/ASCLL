@@ -1,0 +1,34 @@
+{
+    "version": "5.0.1",
+    "description": "UsbEAm Hosts Editor —— 多平台 hosts 修改/反代加速工具（羽翼城 Dogfight360）",
+    "homepage": "https://www.dogfight360.com/blog/18627/",
+    "license": "Freeware",
+    "notes": [
+        "修改 hosts 需要管理员权限，首次运行请右键以管理员身份启动"
+    ],
+    "url": "https://www.dogfight360.com/blog/wp-content/uploads/2026/01/UsbEAm_Hosts_Editor_V5.0.1.zip",
+    "hash": "366e6811060e7a7f2fe8379694ab2d057a21a9a0af64cce84525eb3f5554b38c",
+    "extract_dir": "UsbEAm Hosts Editor",
+    "bin": [
+        [
+            "UsbEAm Hosts Editor.exe",
+            "usbeam-hosts-editor"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "UsbEAm Hosts Editor.exe",
+            "UsbEAm Hosts Editor"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.dogfight360.com/blog/18627/",
+        "regex": "UsbEAm_Hosts_Editor_V([\\d.]+)\\.zip"
+    },
+    "autoupdate": {
+        "url": "https://www.dogfight360.com/blog/wp-content/uploads/2026/01/UsbEAm_Hosts_Editor_V$version.zip",
+        "hash": {
+            "mode": "download"
+        }
+    }
+}

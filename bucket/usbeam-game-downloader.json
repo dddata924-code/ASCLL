@@ -1,0 +1,45 @@
+{
+    "version": "261007",
+    "description": "UsbEAm 游戏下载助手 —— 加速各大平台游戏下载（羽翼城 Dogfight360）",
+    "homepage": "https://www.dogfight360.com/blog/19189/",
+    "license": "Freeware",
+    "architecture": {
+        "64bit": {
+            "url": "https://www.dogfight360.com/Usbeam/DLV6/UsbEAm游戏下载助手_261007_amd64.zip",
+            "hash": "fb0760cbe3726972994664c77bc56279c24a2431952a8768590e36f1d0632d66"
+        },
+        "arm64": {
+            "url": "https://www.dogfight360.com/Usbeam/DLV6/UsbEAm游戏下载助手_261007_arm64.zip",
+            "hash": "9469ea5fdb5e6c066ab82253dbfedd9cc12c90acd268d38c8eafe435dfc74aee"
+        }
+    },
+    "bin": [
+        [
+            "UsbEAm游戏下载助手.exe",
+            "usbeam-game-downloader"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "UsbEAm游戏下载助手.exe",
+            "UsbEAm 游戏下载助手"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.dogfight360.com/blog/19189/",
+        "regex": "UsbEAm游戏下载助手_(\\d+)_amd64\\.zip"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://www.dogfight360.com/Usbeam/DLV6/UsbEAm游戏下载助手_$version_amd64.zip"
+            },
+            "arm64": {
+                "url": "https://www.dogfight360.com/Usbeam/DLV6/UsbEAm游戏下载助手_$version_arm64.zip"
+            }
+        },
+        "hash": {
+            "mode": "download"
+        }
+    }
+}
