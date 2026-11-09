@@ -1,0 +1,10 @@
+{
+    "version": "1.0.0",
+    "description": "一句话说明这个应用是干什么的",
+    "homepage": "https://example.com",
+    "license": "MIT",
+    "url": "https://example.com/app-1.0.0.zip",
+    "hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "bin": ["app.exe", "cli.exe"],
+    "shortcuts": [["app.exe", "App"]]
+}
