@@ -1,0 +1,47 @@
+{
+    "version": "4.29.4",
+    "description": "Desktop edition of AstrBot - run AstrBot locally with ChatUI and the plugin ecosystem.",
+    "homepage": "https://github.com/AstrBotDevs/AstrBot-desktop",
+    "license": "AGPL-3.0",
+    "notes": [
+        "Requires Microsoft Edge WebView2 Runtime (already present on most Windows 10/11 systems).",
+        "Runtime data lives in '%USERPROFILE%\\.astrbot' and is not touched by Scoop updates.",
+        "The portable build disables in-app updates on purpose; update with 'scoop update astrbot' instead."
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/AstrBotDevs/AstrBot-desktop/releases/download/v4.29.4/AstrBot_4.29.4_windows_amd64_portable.zip",
+            "hash": "3936dd7a0d5e17a8ca6e61ba076263c99cafda57cff44160dc2f73be09033c16"
+        },
+        "arm64": {
+            "url": "https://github.com/AstrBotDevs/AstrBot-desktop/releases/download/v4.29.4/AstrBot_4.29.4_windows_arm64_portable.zip",
+            "hash": "f5fe1dea46136b920d387252d2c795bf1091f00cdc70db2fb9b27dd884106480"
+        }
+    },
+    "pre_install": [
+        "$inner = Get-ChildItem -LiteralPath $dir -Directory | Where-Object { Test-Path -LiteralPath (Join-Path $_.FullName 'AstrBot.exe') } | Select-Object -First 1",
+        "if ($inner) { Get-ChildItem -LiteralPath $inner.FullName -Force | Move-Item -Destination $dir -Force; Remove-Item -LiteralPath $inner.FullName -Recurse -Force }"
+    ],
+    "shortcuts": [
+        [
+            "AstrBot.exe",
+            "AstrBot"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/AstrBotDevs/AstrBot-desktop"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/AstrBotDevs/AstrBot-desktop/releases/download/v$version/AstrBot_$version_windows_amd64_portable.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/AstrBotDevs/AstrBot-desktop/releases/download/v$version/AstrBot_$version_windows_arm64_portable.zip"
+            }
+        },
+        "hash": {
+            "mode": "github"
+        }
+    }
+}
