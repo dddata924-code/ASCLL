@@ -6,7 +6,7 @@
     "notes": [
         "Requires Microsoft Edge WebView2 Runtime (already present on most Windows 10/11 systems).",
         "Runtime data lives in '%USERPROFILE%\\.astrbot' and is not touched by Scoop updates.",
-        "The portable build disables in-app updates on purpose; update with 'scoop update astrbot' instead."
+        "The portable build disables in-app updates on purpose; update with 'scoop update astrbot-desktop' instead."
     ],
     "architecture": {
         "64bit": {
