@@ -1,11 +1,11 @@
 # scoop
 
-Raisin55 的 Scoop bucket —— 按分类存放常用应用清单，所有 hash 基于官方最新版实算/官方校验和核对。
+dddata924-code 的 Scoop bucket —— 按分类存放常用应用清单，所有 hash 基于官方最新版实算/官方校验和核对。
 
 ## 安装本 bucket
 
 ```powershell
-scoop bucket add scoop https://github.com/Raisin55/scoop
+scoop bucket add scoop https://github.com/dddata924-code/ASCLL
 ```
 
 ## 目录分类
