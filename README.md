@@ -17,7 +17,7 @@ scoop bucket add scoop https://github.com/dddata924-code/ASCLL
 | AI 工具 | `bucket/ai/` | magpie-ai、astrbot-desktop |
 | 游戏工具 | `bucket/game/` | Steam 挂卡、战地6 匹配区域锁定、UsbEAm 游戏下载助手/启动器 |
 | 网络加速 | `bucket/network/` | Steamcommunity 302、UsbEAm Hosts Editor |
-| 工具 | `bucket/tools/` | UsbEAm Download Manager |
+| 工具 | `bucket/tools/` | UsbEAm Download Manager、z-switch |
 
 ## 应用列表
 
@@ -48,6 +48,7 @@ scoop bucket add scoop https://github.com/dddata924-code/ASCLL
 
 | 包名 | 版本 | 架构 | 说明 |
 |---|---|---|---|
+| `z-switch` | 0.5.0 | x64 | Claude Code / Codex / Grok 桌面供应商一键切换器 —— API 中转站与官方账号一键切换、本地代理热切换、测速与真实流式体检（跟踪 ZtestAi/z-switch） |
 | `usbeam-download-manager` | 1.0.5 | x64 + arm64 | UsbEAm Download Manager —— 多线程下载管理器（羽翼城 Dogfight360） |
 
 ## 常用命令
