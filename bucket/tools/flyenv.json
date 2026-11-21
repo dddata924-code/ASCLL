@@ -1,0 +1,39 @@
+{
+    "version": "4.21.0",
+    "description": "All-in-one full-stack development environment manager (Apache/Nginx/Caddy/PHP/MySQL/MariaDB/PostgreSQL/MongoDB/Redis/Node/Python/Go/Java/Ollama etc.), the open-source alternative to XAMPP/phpStudy.",
+    "homepage": "https://github.com/xpf0000/FlyEnv",
+    "license": "BSD-3-Clause",
+    "notes": [
+        "FlyEnv is an all-in-one local dev environment manager (successor of PhpWebStudy).",
+        "Service/module data lives in FlyEnv-Data, persisted at persist\\flyenv\\FlyEnv-Data; the installer sets machine env var FLYENV_DATA_ROOT to it (FlyEnv's official data-root override), so data survives Scoop updates and uninstall.",
+        "App settings stay in %APPDATA%\\FlyEnv (Electron userData) and are unaffected by Scoop updates."
+    ],
+    "url": "https://github.com/xpf0000/FlyEnv/releases/download/v4.21.0/FlyEnv-Setup-4.21.0.exe",
+    "hash": "6a8414728f94391d3d52665021dfc241e3b61fdb971302a404d34ba9a8ef5efd",
+    "installer": {
+        "script": [
+            "Expand-7zipArchive \"$dir\\$fname\" \"$dir\" -Removal",
+            "$payload = Get-ChildItem -LiteralPath \"$dir\\`$PLUGINSDIR\" -Filter 'app-*.7z' | Select-Object -First 1",
+            "if ($payload) { Expand-7zipArchive \"$($payload.FullName)\" \"$dir\" -Removal } else { throw 'FlyEnv NSIS payload app-*.7z not found' }",
+            "Remove-Item -LiteralPath \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\" -Recurse -Force -ErrorAction SilentlyContinue",
+            "$dataRoot = \"$persist_dir\\FlyEnv-Data\"",
+            "if (-not (Test-Path -LiteralPath $dataRoot)) { New-Item -Path $dataRoot -ItemType Directory -Force | Out-Null }",
+            "try { [Environment]::SetEnvironmentVariable('FLYENV_DATA_ROOT', $dataRoot, 'Machine') } catch { [Environment]::SetEnvironmentVariable('FLYENV_DATA_ROOT', $dataRoot, 'User') }"
+        ]
+    },
+    "shortcuts": [
+        [
+            "FlyEnv.exe",
+            "FlyEnv"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/xpf0000/FlyEnv"
+    },
+    "autoupdate": {
+        "url": "https://github.com/xpf0000/FlyEnv/releases/download/v$version/FlyEnv-Setup-$version.exe",
+        "hash": {
+            "mode": "github"
+        }
+    }
+}

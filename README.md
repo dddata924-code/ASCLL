@@ -17,7 +17,7 @@ scoop bucket add scoop https://github.com/dddata924-code/ASCLL
 | AI 工具 | `bucket/ai/` | magpie-ai、astrbot-desktop |
 | 游戏工具 | `bucket/game/` | Steam 挂卡、战地6 匹配区域锁定、UsbEAm 游戏下载助手/启动器 |
 | 网络加速 | `bucket/network/` | Steamcommunity 302、UsbEAm Hosts Editor |
-| 工具 | `bucket/tools/` | UsbEAm Download Manager、z-switch、zcode-switch |
+| 工具 | `bucket/tools/` | FlyEnv、UsbEAm Download Manager、z-switch、zcode-switch |
 
 ## 应用列表
 
@@ -48,6 +48,7 @@ scoop bucket add scoop https://github.com/dddata924-code/ASCLL
 
 | 包名 | 版本 | 架构 | 说明 |
 |---|---|---|---|
+| `flyenv` | 4.21.0 | x64 | FlyEnv —— 一体化全栈开发环境管理器（Apache/Nginx/PHP/MySQL/MariaDB/PostgreSQL/MongoDB/Redis/Node/Python/Go/Java/Ollama 等），XAMPP/phpStudy 的开源替代（跟踪 xpf0000/FlyEnv） |
 | `zcode-switch` | 1.7.1 | x64 | Z·SWITCH —— 多个 ZCode 账号一键切换，内联显示套餐额度与重置时间、活动领取、加密导入导出（跟踪 pjpv/zcode-switch） |
 | `z-switch` | 0.5.0 | x64 | Claude Code / Codex / Grok 桌面供应商一键切换器 —— API 中转站与官方账号一键切换、本地代理热切换、测速与真实流式体检（跟踪 ZtestAi/z-switch） |
 | `usbeam-download-manager` | 1.0.5 | x64 + arm64 | UsbEAm Download Manager —— 多线程下载管理器（羽翼城 Dogfight360） |
@@ -69,6 +70,7 @@ scoop uninstall scoop/<app>          # 卸载
 - **magpie-ai**：跟踪 [yetone/magpie](https://github.com/yetone/magpie) 的**最新发布**（latest channel），不是 stable 通道；清单带 `checkver`（github）+ `autoupdate`（hash 取自 `$baseurl/SHA256SUMS`）。首次安装会写入 `data/settings.json` 关闭应用内自动更新（避免与 Scoop 更新冲突），数据目录持久化到 `persist/data`。
 - **astrbot-desktop**：装的是桌面版（`AstrBotDevs/AstrBot-desktop`），不是服务端框架本体（`AstrBotDevs/AstrBot`，那个只有 Docker/pip 和 dashboard 产物，没有 Windows 二进制）。用的是官方 `*_windows_{amd64,arm64}_portable.zip`（绿色版），不是 setup 安装器；安装时会自动去掉压缩包里的顶层目录，快捷方式指向 `AstrBot.exe`。运行时数据（配置、插件、日志）在 `%USERPROFILE%\.astrbot`，不随 Scoop 升级/卸载变动；便携版禁用了应用内自动更新，更新请用 `scoop update astrbot-desktop`。需要 Microsoft Edge WebView2 Runtime（Win10/11 一般已自带）。清单带 `checkver`（github）+ `autoupdate`（hash 取自 GitHub release 资产的 digest）。
 - **z-switch vs zcode-switch**：两个名字很像但完全不同的工具，不要混淆。`z-switch`（ZtestAi/z-switch，现称 ZSwitch）切换的是 **Claude Code / Codex / Grok 的 API 供应商**；`zcode-switch`（pjpv/zcode-switch，界面显示 Z·SWITCH）切换的是 **ZCode 客户端的登录账号**，并显示套餐额度、领取活动票面。
+- **flyenv**：NSIS setup.exe 两段解包（先解 setup 得 `$PLUGINSDIR/app-64.7z`，再解出应用本体），快捷方式指向 `FlyEnv.exe`。服务/模块数据目录 `FlyEnv-Data` 持久化在 `persist/flyenv/FlyEnv-Data`，安装时把机器级环境变量 `FLYENV_DATA_ROOT` 指过去（这是 FlyEnv 官方支持的数据目录覆盖方式），数据不随 Scoop 升级/卸载丢失；应用自身设置仍在 `%APPDATA%\FlyEnv`。注意：上游有过"release 资产重传但 latest.yml 未更新"的历史，`latest.yml` 里的 sha512 与当前资产对不上，所以 autoupdate 用 GitHub asset digest（`hash.mode: github`），不用 latest.yml。
 - 其余应用版权归 [羽翼城 Dogfight360](https://www.dogfight360.com/blog/) 所有，本 bucket 仅做 Scoop 打包分发，不改动原始二进制。
 - 部分工具（Steamcommunity 302、UsbEAm Hosts Editor、战地6 区域锁定）需**管理员权限**改 hosts / 装证书 / 改防火墙，Scoop 只装文件与快捷方式，权限提升请自行以管理员身份启动。
 
