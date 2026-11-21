@@ -1,0 +1,44 @@
+{
+    "version": "1.7.1",
+    "description": "Z-SWITCH - 多个 ZCode 账号一键切换的桌面工具，内联显示套餐额度与重置时间（跟踪 pjpv/zcode-switch）",
+    "homepage": "https://github.com/pjpv/zcode-switch",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://github.com/pjpv/zcode-switch"
+    },
+    "notes": [
+        "只切换 ZCode 的登录身份，项目 / 会话 / 设置 / 插件全部共用不动。",
+        "切换前会自动保全当前登录，账号数据保存在本地。"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/pjpv/zcode-switch/releases/download/v1.7.1/zcode-switch_1.7.1_x64-setup.exe",
+            "hash": "9dfe481b21da2426a7a74b5fccde0d46f24f2c4131356237fd8485a4e965701f"
+        }
+    },
+    "installer": {
+        "script": [
+            "Expand-7zipArchive \"$dir\\$fname\" \"$dir\" -Removal",
+            "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\uninstall.exe\" -Recurse -Force -ErrorAction SilentlyContinue"
+        ]
+    },
+    "shortcuts": [
+        [
+            "zcode-switch.exe",
+            "Z-SWITCH"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/pjpv/zcode-switch"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/pjpv/zcode-switch/releases/download/v$version/zcode-switch_$version_x64-setup.exe"
+            }
+        },
+        "hash": {
+            "mode": "github"
+        }
+    }
+}
