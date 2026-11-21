@@ -1,5 +1,5 @@
 {
-    "version": "1.7.1",
+    "version": "1.7.2",
     "description": "Z-SWITCH - 多个 ZCode 账号一键切换的桌面工具，内联显示套餐额度与重置时间（跟踪 pjpv/zcode-switch）",
     "homepage": "https://github.com/pjpv/zcode-switch",
     "license": {
@@ -12,8 +12,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/pjpv/zcode-switch/releases/download/v1.7.1/zcode-switch_1.7.1_x64-setup.exe",
-            "hash": "9dfe481b21da2426a7a74b5fccde0d46f24f2c4131356237fd8485a4e965701f"
+            "url": "https://github.com/pjpv/zcode-switch/releases/download/v1.7.2/zcode-switch_1.7.2_x64-setup.exe",
+            "hash": "890dc67bc8e2c3895e5acf9656a4b73f98d46b604fbfc16f557def72e5c0f7ed"
         }
     },
     "installer": {
