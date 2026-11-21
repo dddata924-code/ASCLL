@@ -5,14 +5,12 @@
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/ZtestAi/z-switch/releases/download/v$version/z-switch-$version_x64_en-US.msi",
-            "hash": "1e60d5a47c89b6f3c11ee22b20b590fc41a82fa4f5b1a80b85b6383fce3b106b"
+            "url": "https://github.com/ZtestAi/z-switch/releases/download/v0.5.0/z-switch_0.5.0_x64-setup.exe",
+            "hash": "3509bc2bf11ce9870267b45056aabfc547f0efe6f20a419c75ea2db6fbb74667"
         }
     },
     "installer": {
-        "script": [
-            "expand-msi \"$dir\\$fname\" -AllowCancel:$false -ExtractPath \"$dir\""
-        ]
+        "script": "Expand-7zipArchive \"$dir\\$fname\" \"$dir\" \"z-switch.exe\""
     },
     "bin": [
         [
@@ -30,7 +28,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/ZtestAi/z-switch/releases/download/v$version/z-switch-$version_x64_en-US.msi"
+                "url": "https://github.com/ZtestAi/z-switch/releases/download/v$version/z-switch_$version_x64-setup.exe"
             }
         },
         "hash": {
