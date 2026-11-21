@@ -64,7 +64,7 @@ scoop uninstall scoop/<app>          # 卸载
 
 ## 说明
 
-- **分类目录**：Scoop 的 `search`/`info`/`install`/`manifest_path` 全部递归扫描 bucket 目录，所以子目录分类不影响任何命令，`scoop install scoop/magpie-ai` 照常工作。
+- **分类目录**：Scoop 的 `search`/`info`/`install` 会递归扫描 bucket 目录，所以子目录分类不影响任何命令，`scoop install scoop/magpie-ai` 照常工作。
 - **magpie-ai**：跟踪 [yetone/magpie](https://github.com/yetone/magpie) 的**最新发布**（latest channel），不是 stable 通道；清单带 `checkver`（github）+ `autoupdate`（hash 取自 `$baseurl/SHA256SUMS`）。首次安装会写入 `data/settings.json` 关闭应用内自动更新（避免与 Scoop 更新冲突），数据目录持久化到 `persist/data`。
 - **astrbot-desktop**：装的是桌面版（`AstrBotDevs/AstrBot-desktop`），不是服务端框架本体（`AstrBotDevs/AstrBot`，那个只有 Docker/pip 和 dashboard 产物，没有 Windows 二进制）。用的是官方 `*_windows_{amd64,arm64}_portable.zip`（绿色版），不是 setup 安装器；安装时会自动去掉压缩包里的顶层目录，快捷方式指向 `AstrBot.exe`。运行时数据（配置、插件、日志）在 `%USERPROFILE%\.astrbot`，不随 Scoop 升级/卸载变动；便携版禁用了应用内自动更新，更新请用 `scoop update astrbot-desktop`。需要 Microsoft Edge WebView2 Runtime（Win10/11 一般已自带）。清单带 `checkver`（github）+ `autoupdate`（hash 取自 GitHub release 资产的 digest）。
 - 其余应用版权归 [羽翼城 Dogfight360](https://www.dogfight360.com/blog/) 所有，本 bucket 仅做 Scoop 打包分发，不改动原始二进制。
