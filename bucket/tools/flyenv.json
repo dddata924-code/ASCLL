@@ -1,5 +1,5 @@
 {
-    "version": "4.21.0",
+    "version": "4.21.1",
     "description": "All-in-one full-stack development environment manager (Apache/Nginx/Caddy/PHP/MySQL/MariaDB/PostgreSQL/MongoDB/Redis/Node/Python/Go/Java/Ollama etc.), the open-source alternative to XAMPP/phpStudy.",
     "homepage": "https://github.com/xpf0000/FlyEnv",
     "license": "BSD-3-Clause",
@@ -8,8 +8,8 @@
         "Service/module data lives in FlyEnv-Data, persisted at persist\\flyenv\\FlyEnv-Data; the installer sets machine env var FLYENV_DATA_ROOT to it (FlyEnv's official data-root override), so data survives Scoop updates and uninstall.",
         "App settings stay in %APPDATA%\\FlyEnv (Electron userData) and are unaffected by Scoop updates."
     ],
-    "url": "https://github.com/xpf0000/FlyEnv/releases/download/v4.21.0/FlyEnv-Setup-4.21.0.exe",
-    "hash": "6a8414728f94391d3d52665021dfc241e3b61fdb971302a404d34ba9a8ef5efd",
+    "url": "https://github.com/xpf0000/FlyEnv/releases/download/v4.21.1/FlyEnv-Setup-4.21.1.exe",
+    "hash": "b2863ffca360e677007c7b8ad2c3b94775bb5d7de020277eefb09495a75356cc",
     "installer": {
         "script": [
             "Expand-7zipArchive \"$dir\\$fname\" \"$dir\" -Removal",
